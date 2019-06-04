@@ -437,6 +437,9 @@ Result Gui::init(void)
     return 0;
 }
 
+// From sound.cpp. Not in sound.hpp for an implementation-independent sound.hpp
+extern void SOUND_correctBGMDataSize();
+
 void Gui::mainLoop(void)
 {
     bool exit = false;
@@ -498,6 +501,7 @@ void Gui::mainLoop(void)
         }
 
         textBuffer->clear();
+        SOUND_correctBGMDataSize();
     }
 }
 
